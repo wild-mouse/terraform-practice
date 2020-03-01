@@ -6,7 +6,7 @@ variable "cidr_blocks" {
 }
 
 resource "aws_security_group" "default" {
-  name = "example"
+  name = var.name
   vpc_id = var.vpc_id
 }
 
