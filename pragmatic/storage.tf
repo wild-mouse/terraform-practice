@@ -34,9 +34,9 @@ resource "aws_s3_bucket" "public" {
   }
 }
 
-resource"aws_s3_bucket" "alb_log" {
+resource "aws_s3_bucket" "alb_log" {
   bucket = "wildmouse-alb-log-pragmatic-terraform"
-  //  force_destroy = true
+  force_destroy = true
 
   lifecycle_rule {
     enabled = true
