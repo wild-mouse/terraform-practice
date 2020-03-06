@@ -1,0 +1,6 @@
+[
+  {
+    "name": "example",
+    "imageUri": "https://github.com/wild-mouse/terraform-practice.git:latest"
+  }
+]
