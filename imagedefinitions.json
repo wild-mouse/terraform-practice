@@ -1,6 +1,6 @@
 [
   {
     "name": "example",
-    "imageUri": "https://github.com/wild-mouse/terraform-practice.git:latest"
+    "imageUri": "882017713199.dkr.ecr.ap-northeast-1.amazonaws.com/example:latest"
   }
 ]
