@@ -13,8 +13,8 @@ phases:
     commands:
       - docker build -t $IMAGE .
       - docker push $IMAGE
-    post_build:
-      commands:
-        - printf '[{"name":"example","imageUri":"%s"}]' $IMAGE > imagedefinitions.json
+  post_build:
+    commands:
+      - printf '[{"name":"example","imageUri":"%s"}]' $IMAGE > imagedefinitions.json
 artifacts:
   files: imagedefinitions.json
