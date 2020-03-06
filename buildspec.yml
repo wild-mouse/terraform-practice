@@ -9,12 +9,12 @@ phases:
       - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
       - REPO=$(aws ecr describe-repositories --repository-names example --output text --query "repositories[0].repositoryUri")
       - IMAGE=$REPO:latest
-    build:
+  build:
+    commands:
+      - docker build -t $IMAGE .
+      - docker push $IMAGE
+    post_build:
       commands:
-        - docker build -t $IMAGE .
-        - docker push $IMAGE
-      post_build:
-        commands:
-          - printf '[{"name":"example","imageUri":"%s"}]' $IMAGE > imagedefinitions.json
+        - printf '[{"name":"example","imageUri":"%s"}]' $IMAGE > imagedefinitions.json
 artifacts:
   files: imagedefinitions.json
