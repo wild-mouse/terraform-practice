@@ -1,2 +1,2 @@
-FROM alpine:latest
-CMD echo "Hello, world"
+FROM nginx:latest
+CMD ["nginx", "-g", "daemon off;"]
